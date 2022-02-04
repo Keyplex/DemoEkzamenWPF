@@ -40,7 +40,7 @@ namespace WpfApp2
         {
             get
             {
-                return new Uri(System.IO.Path.Combine(Environment.CurrentDirectory, MainImagePath ?? ""));
+                return new Uri(System.IO.Path.Combine(Environment.CurrentDirectory, MainImagePath ?? "D:\\Рабочий стол\\демоэкзамен пример\\WpfApp2\\bin\\Debug\\Услуги школы\\"));
             }
         }
         public Boolean HasDiscount
