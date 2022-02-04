@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f2edb5dbcb8647529492e67cf5ac8f6e" Name="Diagram1">
+        <EntityTypeShape EntityType="demoEntities.Client" Width="1.5" PointX="1.5" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="demoEntities.ClientService" Width="1.5" PointX="0.75" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="demoEntities.DocumentByService" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="demoEntities.Gender" Width="1.5" PointX="1.5" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="demoEntities.Product" Width="1.5" PointX="0.75" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="demoEntities.ProductPhoto" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="demoEntities.ProductSale" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="demoEntities.Service" Width="1.5" PointX="1.5" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="demoEntities.ServicePhoto" Width="1.5" PointX="3.75" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="demoEntities.sysdiagrams" Width="1.5" PointX="5.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="demoEntities.Tag" Width="1.5" PointX="3.75" PointY="14.25" IsExpanded="true" />
+        <AssociationConnector Association="demoEntities.FK_Client_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="demoEntities.FK_ClientService_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="demoEntities.FK_ClientService_Service" ManuallyRouted="false" />
+        <AssociationConnector Association="demoEntities.FK_DocumentByService_ClientService" ManuallyRouted="false" />
+        <AssociationConnector Association="demoEntities.FK_ProductSale_ClientService" ManuallyRouted="false" />
+        <AssociationConnector Association="demoEntities.FK_ProductPhoto_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="demoEntities.FK_ProductSale_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="demoEntities.FK_ServicePhoto_Service" ManuallyRouted="false" />
+        <AssociationConnector Association="demoEntities.AttachedProduct" ManuallyRouted="false" />
+        <AssociationConnector Association="demoEntities.TagOfClient" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
