@@ -173,6 +173,7 @@ namespace WpfApp2
                     PropertyChanged(this, new PropertyChangedEventArgs("AdminModeCaption"));
                     PropertyChanged(this, new PropertyChangedEventArgs("AdminVisibility"));
                 }
+
             }
         }
         // этот геттер возвращает текст для кнопки в зависимости от текущего режима
@@ -220,8 +221,9 @@ namespace WpfApp2
         }
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
+
             var SelectedService = MainDataGrid.SelectedItem as Service;
-            var EditServiceWindow = new windows.ServiceWindow(SelectedService);
+            var EditServiceWindow = new ServiceWindow(SelectedService);
             if ((bool)EditServiceWindow.ShowDialog())
             {
                 PropertyChanged(this, new PropertyChangedEventArgs("ServiceList"));
@@ -230,6 +232,7 @@ namespace WpfApp2
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
+
             var item = MainDataGrid.SelectedItem as Service;
             if (item.ClientService.Count > 0)
             {
@@ -239,6 +242,19 @@ namespace WpfApp2
             Core.DB.Service.Remove(item);
             Core.DB.SaveChanges();
             ServiceList = Core.DB.Service.ToList();
+        }
+        private void AddService_Click(object sender, RoutedEventArgs e)
+        {
+            // создаем новую услугу
+            var NewService = new Service();
+
+            var NewServiceWindow = new windows.ServiceWindow(NewService);
+            if ((bool)NewServiceWindow.ShowDialog())
+            {
+                ServiceList = Core.DB.Service.ToList();
+                PropertyChanged(this, new PropertyChangedEventArgs("FilteredProductsCount"));
+                PropertyChanged(this, new PropertyChangedEventArgs("ProductsCount"));
+            }
         }
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
@@ -273,19 +289,7 @@ namespace WpfApp2
         {
             SearchFilter = SearchTextBox.Text;
         }
-        private void AddService_Click(object sender, RoutedEventArgs e)
-        {
-            // создаем новую услугу
-            var NewService = new Service();
 
-            var NewServiceWindow = new windows.ServiceWindow(NewService);
-            if ((bool)NewServiceWindow.ShowDialog())
-            {
-                ServiceList = Core.DB.Service.ToList();
-                PropertyChanged(this, new PropertyChangedEventArgs("FilteredProductsCount"));
-                PropertyChanged(this, new PropertyChangedEventArgs("ProductsCount"));
-            }
-        }
         private void MiscButton_Click(object sender, RoutedEventArgs e)
         {
             var NewMiscWindow = new windows.MiscWindow();

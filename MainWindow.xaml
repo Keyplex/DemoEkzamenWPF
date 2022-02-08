@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
+        x:Name="Root"
         Title="Школа 'Леарн'" 
         MinHeight="700" MinWidth="1400" MaxWidth="1170"
         Height="700" Width="1400">
@@ -27,6 +28,7 @@
             <Button
                 x:Name="MiscButton"
                 Content="Разное"
+                Visibility="{Binding AdminVisibility}"
                 Click="MiscButton_Click"/>
             <Button
                 x:Name="AddService"
@@ -34,8 +36,9 @@
                 Visibility="{Binding AdminVisibility}"
                 Click="AddService_Click"/>
             <Button
-                x:Name="AddClientService"
+                x:Name="AddClientService"                
                 Content="Записаться на приём"
+                Visibility="{Binding AdminVisibility}"
                 Click="AddClientService_Click"/>
 
             <Button
@@ -161,19 +164,20 @@
                     Binding="{Binding Discount}"/>
 
                     <DataGridTemplateColumn
-                    Header="Действия">
+                        Header="Действия">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <StackPanel 
-                                Visibility="{Binding DataContext.AdminVisibility, ElementName=Root}"
-                                Orientation="Horizontal">
+                                <StackPanel                         
+                                    Visibility="{Binding DataContext.AdminVisibility, ElementName=Root}"  
+                                    Orientation="Vertical">
+
                                     <Button 
-                                        Content="Редактировать" 
-                                        Name="EditButton" 
+                                        Content="Редактировать"
+                                        x:Name="EditButton" 
                                         Click="EditButton_Click"/>
                                     <Button 
-                                        Content="Удалить" 
-                                        Name="DeleteButton" 
+                                        Content="Удалить"
+                                        x:Name="DeleteButton" 
                                         Click="DeleteButton_Click"/>
                                 </StackPanel>
                             </DataTemplate>
