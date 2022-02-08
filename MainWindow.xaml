@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:WpfApp2"
         mc:Ignorable="d"
         Title="Школа 'Леарн'" 
-        MinHeight="450" MinWidth="1170" MaxWidth="1170"
-        Height="450" Width="1170">
+        MinHeight="700" MinWidth="1400" MaxWidth="1170"
+        Height="700" Width="1400">
 
     <Grid>
         <Grid.ColumnDefinitions>
@@ -111,7 +111,7 @@
 
                 <DataGrid.Columns>
                     <DataGridTextColumn
-                    Width="250"
+                    Width="480"
                     Header="Наименование услуги"
                     Binding="{Binding Title}"/>
 
