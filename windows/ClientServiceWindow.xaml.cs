@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Text.RegularExpressions;
 
@@ -25,6 +26,7 @@ namespace WpfApp2
             }
         }
     }
+
     public partial class ClientService
     {
         public string StartTimeText
@@ -70,10 +72,11 @@ namespace WpfApp2
         }
     }
 }
+
 namespace WpfApp2.windows
 {
     /// <summary>
-    /// Логика взаимодействия для ClientService.xaml
+    /// Логика взаимодействия для ClientServiceWindow.xaml
     /// </summary>
     public partial class ClientServiceWindow : Window
     {
@@ -85,28 +88,15 @@ namespace WpfApp2.windows
         {
             InitializeComponent();
             DataContext = this;
-
-            // список клиентов 
             ClientList = classes.Core.DB.Client.ToList();
-            // список услуг можно передать в параметрах окна, чтобы не плодить сущностей
             ServiceList = serviceList;
-
-            // у нас нет задачи редактировать записи на услуги, поэтому 
-            // в окне всегда создаем новую услугу
             CurrentClientService = new ClientService();
-
-            // время записи устанавливаем текущее, чтобы меньше было править
             CurrentClientService.StartTime = DateTime.Now;
         }
-
-        //private void InitializeComponent()
-        //{
-        //    throw new NotImplementedException();
-        //}
-
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            // Это база данных сохранить
+
+            // сохранение в БД
             try
             {
                 if (CurrentClientService.Client == null)
@@ -127,5 +117,3 @@ namespace WpfApp2.windows
         }
     }
 }
-
-

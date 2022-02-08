@@ -293,7 +293,7 @@ namespace WpfApp2
         }
         private void AddClientService_Click(object sender, RoutedEventArgs e)
         {
-            var NewClientServiceWindow = new ClientServiceWindow(ServiceList);
+            var NewClientServiceWindow = new windows.ClientServiceWindow(ServiceList);
             NewClientServiceWindow.ShowDialog();
         }
     }

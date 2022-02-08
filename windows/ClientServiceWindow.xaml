@@ -1,11 +1,12 @@
-﻿<Window x:Class="WpfApp2.windows.ClientService"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfApp2.windows"
-        mc:Ignorable="d"
-        Title="Запись на услугу" Height="300" Width="500">
+﻿<Window x:Class="WpfApp2.windows.ClientServiceWindow"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp2.windows"
+      mc:Ignorable="d" 
+      Title="Запись на услугу" Height="300" Width="500">
+
     <Grid>
         <StackPanel
            Margin="5">
