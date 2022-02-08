@@ -86,38 +86,44 @@ namespace WpfApp2.windows
             InitializeComponent();
             DataContext = this;
 
-            // список услуг можно передать в параметрах окна, чтобы не плодить сущностей
-            ServiceList = serviceList;
-
             // список клиентов 
             ClientList = classes.Core.DB.Client.ToList();
+            // список услуг можно передать в параметрах окна, чтобы не плодить сущностей
+            ServiceList = serviceList;
 
             // у нас нет задачи редактировать записи на услуги, поэтому 
             // в окне всегда создаем новую услугу
             CurrentClientService = new ClientService();
 
             // время записи устанавливаем текущее, чтобы меньше было править
-            //CurrentClientService.StartTime = DateTime.Now;
+            CurrentClientService.StartTime = DateTime.Now;
         }
 
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
-        }
+        //private void InitializeComponent()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            //    // Это база данных сохранить
-            //    try
-            //    {
-            //        if (CurrentClientService.Client == null)
-            //            throw new Exception("Не выбран клиент");
-            //        if (CurrentClientService.Service == null)
-            //            throw new Exception("Не выбрана услуга");
+            // Это база данных сохранить
+            try
+            {
+                if (CurrentClientService.Client == null)
+                    throw new Exception("Не выбран клиент");
 
-            //        classes.Core.DB.ClientService.Add(CurrentClientService);
-            //        classes.Core.DB.SaveChanges();
-            //}
+                if (CurrentClientService.Service == null)
+                    throw new Exception("Не выбрана услуга");
+
+                classes.Core.DB.ClientService.Add(CurrentClientService);
+                classes.Core.DB.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+            DialogResult = true;
         }
     }
 }

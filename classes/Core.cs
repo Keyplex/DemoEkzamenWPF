@@ -8,6 +8,6 @@ namespace WpfApp2.classes
 {
     internal class Core
     {
-        public static demoModelEntities DB = new demoModelEntities();
+        public static Entities DB = new Entities();
     }
 }
