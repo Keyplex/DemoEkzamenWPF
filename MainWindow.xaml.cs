@@ -40,7 +40,7 @@ namespace WpfApp2
         {
             get
             {
-                return new Uri(System.IO.Path.Combine(Environment.CurrentDirectory, MainImagePath ?? "D:\\Рабочий стол\\демоэкзамен пример\\WpfApp2\\bin\\Debug\\Услуги школы\\"));
+                return new Uri(System.IO.Path.Combine(Environment.CurrentDirectory, MainImagePath ?? ""));
             }
         }
         public Boolean HasDiscount
@@ -200,6 +200,8 @@ namespace WpfApp2
             InitializeComponent();
             DataContext = this;
             ServiceList = Core.DB.Service.ToList();
+
+
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
